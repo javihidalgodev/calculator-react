@@ -15,7 +15,7 @@ export default function Button (props) {
       id={props.children === '=' ? 'equals' : props.children === '.' ? 'decimal' : props.children}
       type='button'
       className={`button ${isOperator(props.children) ? 'operator' : ''}`.trim()}
-      onClick={(e) => props.handleClick(e, props.children)}
+      onPointerUp={(e) => props.handleClick(e, props.children)}
     >
       {props.children}
     </button>

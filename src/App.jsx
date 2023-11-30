@@ -1,6 +1,6 @@
 import './App.css'
 import { useEffect, useState } from 'react'
-import { evaluate, i } from 'mathjs'
+import { evaluate } from 'mathjs'
 import Logo from './components/Logo'
 import Output from './components/Output'
 import Button from './components/Button'
@@ -102,17 +102,17 @@ function App() {
         } else {
           document.removeEventListener('keyup', handleKeyDown)
           alert('Ingresa un valor válido para ejecutar una operación')
-          document.addEventListener('keyup', handleKeyDown)
+          setTimeout(() => document.addEventListener('keyup', handleKeyDown), 1000)
         }
       } else {
         document.removeEventListener('keyup', handleKeyDown)
         alert('Ingresa un operador y un valor válido para ejecutar una operación')
-        document.addEventListener('keyup', handleKeyDown)
+        setTimeout(() => document.addEventListener('keyup', handleKeyDown), 1000)
       }
     } else {
       document.removeEventListener('keyup', handleKeyDown)
       alert('Ingresa una operación para realizar un cálculo')
-      document.addEventListener('keyup', handleKeyDown)
+      setTimeout(() => document.addEventListener('keyup', handleKeyDown), 1000)
     }
   }
   
